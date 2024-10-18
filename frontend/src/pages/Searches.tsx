@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import LinearSearch from './LinearSearch';
 import DFS from './DFS';
 import BFS from './BFS';
+import BinarySearch from './BinarySearch';
 
 const Searches: React.FC = () => {
     const [selectedOption, setSelectedOption] = useState<string>('');
@@ -25,7 +26,7 @@ const Searches: React.FC = () => {
             </select>
             <div className="mt-2">
                 {selectedOption === 'LinearSearch' && <LinearSearch />}
-                {selectedOption === 'BinarySearch' && <p>Binary Search content goes here</p>}
+                {selectedOption === 'BinarySearch' && <BinarySearch />}
                 {selectedOption === 'DFS' && <DFS />}
                 {selectedOption === 'BFS' && <BFS />}
             </div>
