@@ -120,6 +120,30 @@ export const bubbleSortWithCallback2 = async (
 //   return -1;
 // }
 
+export function binarysearch(
+  arr: number[],
+  target: number
+): [number, number[]] {
+  let steps: number[] = [];
+  let l = 0;
+  let r = arr.length - 1;
+
+  while (l <= r) {
+    let mid = Math.floor((l + r) / 2);
+    steps.push(mid);
+
+    if (arr[mid] === target) {
+      return [mid, steps];
+    } else if (target < arr[mid]) {
+      r = mid - 1;
+    } else {
+      l = mid + 1;
+    }
+  }
+
+  return [-1, steps];
+}
+
 // console.log(BinarySearch(sortedNumbers, 63)); // 47 is the middle index fwiw
 
 // Nice!
