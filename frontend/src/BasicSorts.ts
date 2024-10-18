@@ -7,28 +7,28 @@
 // If the second one is smaller, swap them
 // Repeat until sorted
 
-function bubbleSort(unsortedArray: number[]): number[] {
-  for (let i = 0; i < unsortedArray.length - 1; i++) {
-    let swapped = false;
-    for (let j = 0; j < unsortedArray.length - 1 - i; j++) {
-      console.log(
-        `Lets compare ${unsortedArray[j]} and ${unsortedArray[j + 1]}`
-      );
-      if (unsortedArray[j] > unsortedArray[j + 1]) {
-        console.log(`Swapping ${unsortedArray[j]} and ${unsortedArray[j + 1]}`);
-        swapped = true;
-        [unsortedArray[j], unsortedArray[j + 1]] = [
-          unsortedArray[j + 1],
-          unsortedArray[j],
-        ];
-      }
-    }
-    if (!swapped) break;
-  }
+// function bubbleSort(unsortedArray: number[]): number[] {
+//   for (let i = 0; i < unsortedArray.length - 1; i++) {
+//     let swapped = false;
+//     for (let j = 0; j < unsortedArray.length - 1 - i; j++) {
+//       console.log(
+//         `Lets compare ${unsortedArray[j]} and ${unsortedArray[j + 1]}`
+//       );
+//       if (unsortedArray[j] > unsortedArray[j + 1]) {
+//         console.log(`Swapping ${unsortedArray[j]} and ${unsortedArray[j + 1]}`);
+//         swapped = true;
+//         [unsortedArray[j], unsortedArray[j + 1]] = [
+//           unsortedArray[j + 1],
+//           unsortedArray[j],
+//         ];
+//       }
+//     }
+//     if (!swapped) break;
+//   }
 
-  console.log("Sorting complete:", unsortedArray);
-  return unsortedArray;
-}
+//   console.log("Sorting complete:", unsortedArray);
+//   return unsortedArray;
+// }
 
 // const unsortedArray: number[] = [5, 2, 8, 3, 1, 6, 4, 9];
 // bubbleSort(unsortedArray);
@@ -45,7 +45,7 @@ function bubbleSort(unsortedArray: number[]): number[] {
 // We have two sections: the sorted and unsorted parts
 // Eventually, the entire array is sorted
 
-const Array2: number[] = [3, 11, 4, 1, 5, 9, 11, 6]; // Added array type annotations for fun
+// const Array2: number[] = [3, 11, 4, 1, 5, 9, 11, 6]; // Added array type annotations for fun
 
 // Lets start simple
 // Loop through all elements, find the min value, and swap it with the first spot

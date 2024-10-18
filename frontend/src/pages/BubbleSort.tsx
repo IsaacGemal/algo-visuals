@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { bubbleSortWithCallback2 } from '../BasicSorts';
 
 function BubbleSort() {
     const [demoArray, setDemoArray] = useState([7, 2, 11, 9, 1, 6, 3, 5]);
     const [highlightedIndices, setHighlightedIndices] = useState<number[]>([]); // Track indices being swapped
-    const [color, setColor] = useState('blue');
 
     const handleClick = () => {
         bubbleSortWithCallback2(demoArray, (array, indices) => {

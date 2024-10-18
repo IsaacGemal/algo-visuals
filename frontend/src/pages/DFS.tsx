@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { dfs } from '../BasicSearches';
+import { Graph, NodePositions, NodeProps, EdgeProps } from '../graphTypes'; // Adjust the path as needed
 
-function DFS() {
-    const [traversalOrder, setTraversalOrder] = useState([]);
+const DFS: React.FC = () => {
+    const [traversalOrder, setTraversalOrder] = useState<string[]>([]);
 
-    const graph = {
+    const graph: Graph = {
         A: ["B", "C"],
         B: ["A", "D", "E"],
         C: ["A", "F"],
@@ -14,7 +15,7 @@ function DFS() {
         G: ["D"],
     };
 
-    const nodePositions = {
+    const nodePositions: NodePositions = {
         A: { x: 200, y: 100 },
         B: { x: 100, y: 200 },
         C: { x: 300, y: 200 },
@@ -36,19 +37,21 @@ function DFS() {
         });
     };
 
-    const Node = ({ node }) => {
+    const Node: React.FC<NodeProps> = ({ node }) => {
         const isVisited = traversalOrder.includes(node);
         const fillColor = isVisited ? 'orange' : 'lightblue';
 
         return (
             <g key={node}>
                 <circle cx={nodePositions[node].x} cy={nodePositions[node].y} r="20" fill={fillColor} stroke="blue" />
-                <text x={nodePositions[node].x} y={nodePositions[node].y} textAnchor="middle" dy=".3em">{node}</text>
+                <text x={nodePositions[node].x} y={nodePositions[node].y} textAnchor="middle" dy=".3em">
+                    {node}
+                </text>
             </g>
         );
     };
 
-    const Edge = ({ start, end }) => (
+    const Edge: React.FC<EdgeProps> = ({ start, end }) => (
         <line
             key={`${start}-${end}`}
             x1={nodePositions[start].x}
@@ -72,6 +75,6 @@ function DFS() {
             <p className="mt-4">Traversal Order: {traversalOrder.join(' -> ')}</p>
         </div>
     );
-}
+};
 
 export default DFS;

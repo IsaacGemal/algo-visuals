@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { LinearSearch3 } from '../BasicSearches';
 
 function LinearSearch() {
-    const [demoArray, setDemoArray] = useState(
+    const [demoArray] = useState(
         Array.from({ length: 8 }, () => Math.floor(Math.random() * 11))
     );
     const [highlightedIndices, setHighlightedIndices] = useState<number[]>([]);
-    const [target, setTarget] = useState(Math.floor(Math.random() * 11)); // Random target number
+    const [target] = useState(Math.floor(Math.random() * 11)); // Random target number
     const [searchResult, setSearchResult] = useState<string | null>(null);
 
 
@@ -21,7 +21,6 @@ function LinearSearch() {
             }
         });
     };
-
 
     return (
         <>
