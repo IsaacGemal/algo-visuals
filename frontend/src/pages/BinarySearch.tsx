@@ -11,7 +11,7 @@ function BinarySearch() {
     });
 
     const [highlightedIndices, setHighlightedIndices] = useState<number[]>([]);
-    const [target] = useState<number>(Math.floor(Math.random() * 20)); // Random target number
+    const [target] = useState<number>(Math.floor(Math.random() * 50)); // Random target number
     const [searchResult, setSearchResult] = useState<string | null>(null);
 
     const handleClick = () => {
@@ -36,7 +36,7 @@ function BinarySearch() {
     return (
         <>
             <h2>
-                Binary search finds an item in a sorted list by dividing the search interval in half.
+                Binary search finds an item in a sorted list by dividing the search interval in half over and over.
             </h2>
             <div className="flex">
                 {demoArray.map((item, index) => (
